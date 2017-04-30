@@ -1,3 +1,4 @@
+import random
 import numpy as np
 from rl.memory.base_memory import Memory
 from rl.util import log_self
