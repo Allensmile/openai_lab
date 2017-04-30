@@ -26,7 +26,13 @@ class LinearMemory(Memory):
         else:  # discrete problem
             if np.shape(action) == (self.env_spec['action_dim'], ):
                 # raw action from continuous agent, keep as is
-                encoded_action = action
+                if random.randint(0, 1):
+                    encoded_action = action
+                else:
+                    # one-hot encode it
+                    encoded_action = np.zeros(
+                        self.agent.env_spec['action_dim'])
+                    encoded_action[np.argmax(action)] = 1
             else:  # action from discrete agent, do one-hot encoding
                 encoded_action = np.zeros(self.agent.env_spec['action_dim'])
                 encoded_action[action] = 1
