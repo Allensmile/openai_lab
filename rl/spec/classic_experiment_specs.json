@@ -310,8 +310,8 @@
       "output_layer_activation": "tanh"
     },
     "param_range": {
-      "lr": [0.0001, 0.0005, 0.001, 0.005, 0.01],
-      "critic_lr": [0.001, 0.005, 0.01, 0.05],
+      "lr": [0.0001, 0.001, 0.01],
+      "critic_lr": [0.001, 0.01],
       "hidden_layers": [
         [100],
         [200],
